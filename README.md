@@ -18,6 +18,41 @@ Big-Event 是一个模拟"新闻发布系统"的企业级全栈项目，采用�
 | 文章管理 | 发布、编辑、删除、分页查询（PageHelper）、条件搜索           |
 | 登录优化 | Redis 存储 Token，实现密码修改后旧 Token 主动失效            |
 
+## 版本锁定（本课程环境基准，新环境按此对照）
+
+### 基础环境
+| 组件    | 版本          | 备注                                |
+| ------- | ------------- | ----------------------------------- |
+| JDK     | 17.0.x（LTS） | SpringBoot3 最低要求 17             |
+| Maven   | 3.9.6         | 不要用 Maven 4.x，IDEA 导入器不兼容 |
+| MySQL   | 8.x           |                                     |
+| Redis   | 7.x           |                                     |
+| Node.js | 16+           | 前端用                              |
+
+### 后端依赖（big-event-backend）
+| 依赖       | 坐标                                      | 版本         | 备注                              |
+| ---------- | ----------------------------------------- | ------------ | --------------------------------- |
+| SpringBoot | `spring-boot-starter-parent`              | **3.5.16**   | 3.x 收官版，勿用 4.x / 3.0.x      |
+| MyBatis    | `mybatis-spring-boot-starter`             | **3.0.5**    | Boot3 必须配 3.x，勿用 2.x        |
+| MySQL 驱动 | `mysql-connector-j`                       | 由 Boot 管理 | runtime scope                     |
+| 分页       | `pagehelper-spring-boot-starter`          | **2.1.0**    | 对应 Boot3                        |
+| JWT        | `jjwt-api` / `jjwt-impl` / `jjwt-jackson` | **0.12.6**   | 0.12 写法与 0.9 差异大            |
+| 参数校验   | `spring-boot-starter-validation`          | 由 Boot 管理 |                                   |
+| 缓存       | `spring-boot-starter-data-redis`          | 由 Boot 管理 |                                   |
+| 工具       | `lombok`                                  | 由 Boot 管理 | IDEA 需装 Lombok 插件（新版内置） |
+
+### 前端依赖（big-event-frontend）
+| 依赖         | 版本                            |
+| ------------ | ------------------------------- |
+| Vue          | 3.4+                            |
+| Vite         | 5.x                             |
+| Vue Router   | 4.x                             |
+| Pinia        | 2.x（+ pinia-persistence 插件） |
+| Element Plus | 2.x                             |
+| Axios        | 1.x                             |
+
+> 更新原则：跟教程学习期间锁死上表版本；教程完结后再自行升级并单独验证。
+
 ## 技术栈
 
 ### 后端（big-event-backend）
